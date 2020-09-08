@@ -758,6 +758,7 @@ return function(Vargs)
 		SetData = function(key, value)
 			if Core.DataStore then
 				local ran, ret = pcall(Core.DataStore.SetAsync, Core.DataStore, Core.DataStoreEncode(key), value)
+				print(ran, ret)
 				if ran then
 					Core.DataCache[key] = value
 					return ret
